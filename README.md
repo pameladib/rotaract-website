@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rotaract Club of Zgharta Zawie – Official Website
 
-## Getting Started
+This is the official website for **Rotaract Club of Zgharta Zawie**.  
+Built with modern web technologies to showcase our projects, members, and future international initiatives.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About The Project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This website serves two main purposes:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Public Image**
+   - Present our club professionally
+   - Showcase projects and members
+   - Provide structured information about Rotaract
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **International Initiatives (Upcoming)**
+   - Explore the World with Rotaract
+   - International Rotaract Cookbook
 
-## Learn More
+This project is also part of my personal journey in learning:
 
-To learn more about Next.js, take a look at the following resources:
+- JavaScript
+- React
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Git & GitHub
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- Git & GitHub
+- Deployment (planned): Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Current Features (V1)
+
+- Navigation bar
+- Home page
+- About page
+- Members page (organized by division)
+- Projects page (categorized)
+- Dynamic project pages using slugs
+- Placeholder pages for:
+  - Explore the World
+  - International Cookbook
+
+---
+
+## Planned Features (V2)
+
+- Backend & database integration
+- Admin panel
+- Explore the World:
+  - Interactive world map
+  - Country articles
+  - Quiz system
+  - Digital Rotaract Passport
+- Cookbook:
+  - International recipes
+  - Individual recipe pages
+  - Downloadable PDF feature
+
+---
+
+## Run Locally
+
+Clone the repository:
+
+    git clone https://github.com/pameladib/rotaract-website.git
+
+Install dependencies:
+
+    npm install
+
+Run development server:
+
+    npm run dev
+
+Open in browser:
+
+    http://localhost:3000
+
+---
+
+##  Live Demo
+
+Coming soon (deployment to Vercel planned).
+
+---
+
+## Author
+
+Pamela Dib  
+Computer Science Student  
+Passionate about building real-world projects and growing as a developer 🚀
