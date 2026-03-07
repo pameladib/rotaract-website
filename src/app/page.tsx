@@ -1,13 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import ProjectCarousel from "@/components/ProjectCarousel";
 
 export default function HomePage() {
   return (
     <div className="bg-white">
-      <Navbar />
+      <header>
+      </header>
 
       <main>
-
         <section className="px-6 md:px-16 pt-12">
           <div className="max-w-6xl mx-auto">
             <img
@@ -19,6 +20,7 @@ export default function HomePage() {
             <p className="text-center text-xl md:text-3xl font-semibold mt-8 text-gray-800">
               Young Leaders Creating Positive Change
             </p>
+
           </div>
         </section>
 
@@ -45,7 +47,15 @@ export default function HomePage() {
             </Link>
           </div>
         </section>
+
+        <section className="m-4">
+          <ProjectCarousel />
+        </section>
+
       </main>
+      <footer>
+
+      </footer>
     </div>
   );
 }

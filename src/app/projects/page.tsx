@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-zinc-50">
-      <Navbar />
+    
 
       <main className="py-10">
         <h1 className="mb-12 mt-2 text-center text-4xl font-bold text-gray-900">

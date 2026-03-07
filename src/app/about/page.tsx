@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 export default function AboutPage() {
     return (
         <div className="min-h-screen bg-white dark:bg-black font-sans">
-            <Navbar />
 
             <main className="w-full bg-white bg-white dark:bg-black">
                 <div className="max-w-4xl mx-auto">

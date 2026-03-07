@@ -19,7 +19,7 @@ export default async function ProjectPage({
 
   return (
     <div className="bg-white font-sans">
-      <Navbar />
+  
 
      <main className="mx-auto max-w-6xl px-6 py-10">
 

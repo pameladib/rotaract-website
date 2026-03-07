@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 export default function ExplorePage() {
   return (
     <div className="bg-white font-sans min-h-screen">
-      <Navbar />
+      
 
       <main className="px-6 py-20 text-center">
         <h1 className="text-4xl font-bold mb-6">Explore The World</h1>
