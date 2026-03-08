@@ -23,11 +23,11 @@ export default function ProjectsPage() {
                   {category} Projects
                 </h2>
 
-                {/* subtle divider line */}
+                
                 <div className="ml-6 h-px flex-1 bg-zinc-200" />
               </div>
 
-              <div className="flex gap-6 overflow-x-auto pb-3 px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:overflow-x-auto gap-6 pb-3 px-4">
                 {items.map((item) => (
                   <ProjectCard
                     key={item.id}

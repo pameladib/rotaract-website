@@ -92,7 +92,9 @@ Open in browser:
 
 ##  Live Demo
 
-Coming soon (deployment to Vercel planned).
+You can visit the deployed website here:
+
+https://rotaract-website-rho.vercel.app/
 
 ---
 

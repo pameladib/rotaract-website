@@ -1,11 +1,9 @@
-import Navbar from "@/components/Navbar";
-
 export default function AboutPage() {
     return (
         <div className="min-h-screen bg-white dark:bg-black font-sans">
 
             <main className="w-full bg-white bg-white dark:bg-black">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-4xl mx-auto px-6 py-12">
                     
                     <h1 className="text-4xl font-bold text-center mb-10">
                         About Us

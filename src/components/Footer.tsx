@@ -3,8 +3,7 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <footer className="bg-gray-100 py-10 ">
-            <div className="max-w-6xl mx-auto px-6 grid grid-cols-[1.1fr_1.4fr_1.1fr] gap-16 items-start">
-
+            <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-start">
                 <section>
                     <p className="font-semibold text-lg">
                         Rotaract Club of Zgharta Zawie
@@ -25,6 +24,18 @@ export default function Footer() {
                         <Link className="text-gray-600 hover:text-pink-600" href="/members">Members</Link>
                         <Link className="text-gray-600 hover:text-pink-600" href="/projects">Projects</Link>
 
+                </section>
+
+                <section className="flex flex-col gap-2 items-start">
+                    <p className="font-semibold text-lg">
+                        Contact Us
+                    </p>
+                    <a href="mailto:rotaractclubzgharta@gmail.com">
+                       Email Address: rotaractclubzgharta@gmail.com
+                    </a>
+                    <a href="tel:+96103178238">
+                      tel: +961 03 178 238
+                    </a>
                 </section>
 
                 <section>

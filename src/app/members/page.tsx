@@ -22,7 +22,7 @@ export default function MembersPage() {
           return (
             <section key={division} className="mb-16">
               
-              {/* Centered Division Header */}
+             
               <div className="flex items-center justify-center mb-8 px-4">
                 <div className="h-px flex-1 bg-zinc-200" />
 
@@ -33,8 +33,8 @@ export default function MembersPage() {
                 <div className="h-px flex-1 bg-zinc-200" />
               </div>
 
-              {/* Members List */}
-              <div className="space-y-10 px-4">
+              
+              <div className="space-y-10 px-4 ">
                 {items.map((item) => (
                   <MemberCard
                     key={item.id}

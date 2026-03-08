@@ -15,7 +15,7 @@ export default function MemberCard({
     <section className="py-12">
       <div className="mx-auto max-w-5xl px-6 grid items-center gap-10 md:grid-cols-2">
 
-        {/* Image */}
+        
         <div className="flex justify-center md:justify-start">
           <img
             src={imageSrc}
@@ -30,7 +30,7 @@ export default function MemberCard({
           />
         </div>
 
-        {/* Text */}
+       
         <div className="text-center md:text-left">
           <h3 className="text-3xl font-semibold tracking-tight text-gray-900">
             {name}

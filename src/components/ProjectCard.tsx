@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 type ProjectCardProps = {
-    href: string;          // where the card links to
+    href: string;          
     title: string;
     description: string;
-    imageSrc: string;      // e.g. "/projects/project1.jpg"
+    imageSrc: string;      
 };
 
 export default function ProjectCard({
