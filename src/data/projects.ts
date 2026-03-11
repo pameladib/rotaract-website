@@ -205,7 +205,7 @@ Events like these help strengthen friendships within the club and create memorab
 The evening included cheese, wine, games, and plenty of conversation, giving everyone the chance to relax and enjoy time together outside of our regular meetings and projects.
 
 The dinner was a great opportunity for members to reflect on the year, celebrate the club’s achievements, and create new memories together.`,
-        gallery: ["/christmasdinner/1.jpg", "/christmasdinner/2.jpg", "/christmasdinner/3.jpg", "/christmasdinner/4.jpg", "/christmasdinner/5.jpg", "/christmasdinner/6.jpg", "/christmasdinner/7.jpg", "/christmasdinner/8.jpg"]
+        gallery: ["/christmasdinner/1.JPG", "/christmasdinner/2.JPG", "/christmasdinner/3.JPG", "/christmasdinner/4.JPG", "/christmasdinner/5.JPG", "/christmasdinner/6.JPG", "/christmasdinner/7.JPG", "/christmasdinner/8.JPG"]
     },
     {
         id: 13,
@@ -275,7 +275,7 @@ The project aimed to ease the financial burden on families while encouraging stu
 Participants gathered in Ehden to take part in a bike race that combined sport, community engagement, and awareness for an important cause.
 
 The event aimed to promote healthy lifestyles while raising awareness about breast cancer and the importance of early detection.`,
-gallery: ["/ehdenbybike/1.jpg","/ehdenbybike/2.jpg","/ehdenbybike/3.jpg","/ehdenbybike/4.jpg","/ehdenbybike/5.jpg","/ehdenbybike/6.jpg","/ehdenbybike/7.jpg","/ehdenbybike/8.jpg",]
+gallery: ["/ehdenbybike/1.JPG","/ehdenbybike/2.JPG","/ehdenbybike/3.JPG","/ehdenbybike/4.JPG","/ehdenbybike/5.JPG","/ehdenbybike/6.JPG","/ehdenbybike/7.JPG","/ehdenbybike/8.JPG",]
     },
      {
         id: 17,
@@ -308,21 +308,21 @@ The activity was a great opportunity to appreciate the beauty and heritage of th
         slug: "ehden-book-fair",
         title: "Ehden Book Fair",
         description: "Participation in the Ehden Book Fair to support our Back to School initiative.",
-        imageSrc: "/bookfair/bookfair.jpg",
+        imageSrc: "/bookfair/bookfair.JPG",
         category: "Finance",
         content: `Our club participated in the annual Ehden Book Fair, where members set up a small stand selling items such as paper, crayons, and bookmarks.
 
 All proceeds from the sales were dedicated to supporting our Back to School Kits project, helping us provide school supplies to students in need.
 
 The event allowed us to support education while engaging with the local community in a lively cultural environment.`,
-gallery: ["/bookfair/1.jpg","/bookfair/2.jpg","/bookfair/3.jpg","/bookfair/4.jpg",]
+gallery: ["/bookfair/1.JPG","/bookfair/2.JPG","/bookfair/3.JPG","/bookfair/4.JPG",]
     },
      {
         id: 20,
         slug: "ehden-camp",
         title: "Ehden Camp – Call of the Tribe Edition",
         description: "A multi-club camping event bringing Rotaractors together from across Lebanon.",
-        imageSrc: "/camp/camp.jpg",
+        imageSrc: "/camp/camp.JPG",
         category: "Club Service",
         content: `“Ehden Camp: Call of the Tribe Edition” was a special gathering that brought together Rotaractors from clubs across Lebanon.
 
@@ -331,7 +331,7 @@ Organized in collaboration with Rotaract Tripoli El Mina, Rotaract De Beyrouth M
 Throughout the event, participants enjoyed shared meals, music, conversations, and memorable moments together.
 
 The camp strengthened the bonds between clubs while celebrating the spirit of Rotaract through friendship, collaboration, and community.`,
-gallery: ["/camp/1.jpg","/camp/2.jpg","/camp/3.jpg","/camp/4.jpg","/camp/5.jpg","/camp/6.jpg","/camp/7.jpg","/camp/8.jpg","/camp/9.jpg","/camp/10.jpg","/camp/11.jpg","/camp/12.jpg",]
+gallery: ["/camp/1.JPG","/camp/2.JPG","/camp/3.JPG","/camp/4.JPG","/camp/5.JPG","/camp/6.JPG","/camp/7.JPG","/camp/8.JPG","/camp/9.JPG","/camp/10.JPG","/camp/11.JPG","/camp/12.JPG",]
     },
      {
         id: 21,
@@ -418,7 +418,7 @@ Alongside the business stands, our club organized several activities including a
 All profits generated from our stands and the raffle were directed toward our community project “Yen3ad 3aleykon,” which provides assistance to families in need during the holiday season.
 
 Even with the unexpected challenges, the Christmas Market successfully brought the community together, highlighted local businesses, and celebrated the spirit of giving during the holiday season.`,
-gallery: ["/christmasmarket/1.jpg","/christmasmarket/2.jpg","/christmasmarket/3.jpeg","/christmasmarket/4.jpeg","/christmasmarket/5.jpeg","/christmasmarket/6.jpg","/christmasmarket/7.jpg","/christmasmarket/8.jpeg",]
+gallery: ["/christmasmarket/1.jpg","/christmasmarket/2.jpg","/christmasmarket/3.JPEG","/christmasmarket/4.JPEG","/christmasmarket/5.JPEG","/christmasmarket/6.jpg","/christmasmarket/7.jpg","/christmasmarket/8.JPEG",]
      },
      {
         id: 26,
@@ -453,7 +453,7 @@ With the help of around 20 volunteers, our team spent more than 10 hours packing
 One moment from the day stayed with us. After completing our final delivery, we encountered a family with several young children. Although we had already distributed the last food box, we still had a few toys and diapers left. When we offered them to the family, the children’s faces immediately lit up with joy. Before accepting the diapers, the mother carefully checked the size and said that if they were not suitable, she would prefer that another family receive them. It was a small moment that reminded us of the kindness and dignity people maintain even in difficult circumstances.
 
 The project was a deeply meaningful experience for our members. Seeing the smiles, hearing people wish us “Yen3ad 3aleykon,” and knowing we could help, even in a small way, made all the effort worthwhile.`,
-gallery: ["/yen3ad3laykon/1.jpeg","/yen3ad3laykon/2.jpeg","/yen3ad3laykon/3.jpeg","/yen3ad3laykon/4.jpeg"]
+gallery: ["/yen3ad3laykon/1.JPEG","/yen3ad3laykon/2.JPEG","/yen3ad3laykon/3.JPEG","/yen3ad3laykon/4.JPEG"]
      },
      {
         id: 28,
@@ -467,28 +467,28 @@ gallery: ["/yen3ad3laykon/1.jpeg","/yen3ad3laykon/2.jpeg","/yen3ad3laykon/3.jpeg
 Our team donated hygiene products and milk to support the residents’ daily needs. To make the visit more joyful, we also brought cake and juice and spent time with the residents, sharing music, conversations, and moments of companionship.
 
 Beyond the donations, the goal of the visit was to remind the residents that they are valued and remembered. It was a meaningful experience for our members and a simple way to spread warmth and kindness during the holiday season.`,
-        gallery: ["/elderlyvisit2025/1.jpeg","/elderlyvisit2025/2.jpeg","/elderlyvisit2025/3.jpeg","/elderlyvisit2025/4.jpeg",]
+        gallery: ["/elderlyvisit2025/1.JPEG","/elderlyvisit2025/2.JPEG","/elderlyvisit2025/3.JPEG","/elderlyvisit2025/4.JPEG",]
      },
      {
         id: 29,
         slug: "eduport",
         title: "Eduport",
         description: "An international online event where Rotaractors studying abroad shared their experiences to help students better understand life and education overseas.",
-        imageSrc: "/eduport/eduport.jpeg",
+        imageSrc: "/eduport/eduport.JPEG",
         category: "International Understanding",
         content: `EduPort was an international initiative organized by Rotaract clubs to support students interested in studying abroad. The event brought together Rotaractors currently studying or working in different countries to share their real-life experiences.
 
 Held online over two days, the sessions covered topics such as adapting to new cultures, dealing with homesickness, managing academic pressure, and building a life in a new country. Participants were able to ask questions and learn directly from students who had already gone through the experience.
 
 The project was a collaborative effort between several Rotaract clubs, including RC Nozha United and RC Zgharta Zawie, and was organized entirely by volunteers. Despite having no budget, the initiative successfully connected students with valuable insights and strengthened international relationships between clubs.`,
-gallery: ["/eduport/5.jpeg","/eduport/2.jpeg","/eduport/3.jpeg","/eduport/4.jpeg",]
+gallery: ["/eduport/5.JPEG","/eduport/2.JPEG","/eduport/3.JPEG","/eduport/4.JPEG",]
      },
      {
         id: 30,
         slug: "zgharta-cross-country-2025",
         title: "Zgharta Cross Country 2025",
         description: "A 4 km community race organized for World Health Day to promote physical well-being and raise awareness about maternal and newborn health.",
-        imageSrc: "/zghartacrosscountry/race.jpeg",
+        imageSrc: "/zghartacrosscountry/race.JPEG",
         category: "Community Service",
         content: `To celebrate World Health Day, the Rotaract Club of Zgharta Zawie organized Zgharta Cross Country 2025, a 4 km race that brought together more than 200 runners from across North Lebanon.
 
@@ -498,7 +498,7 @@ In addition to the race, the event also included a short awareness session on ma
 
 The race created a vibrant atmosphere in the town and highlighted the importance of health, community engagement, and collaboration. It also strengthened the connection between the club and the community, leaving a lasting positive impact and paving the way for future editions of the event.
 `,
-        gallery: ["/zghartacrosscountry/1.jpeg","/zghartacrosscountry/2.jpeg","/zghartacrosscountry/3.jpeg","/zghartacrosscountry/4.jpeg","/zghartacrosscountry/5.jpeg","/zghartacrosscountry/6.jpeg","/zghartacrosscountry/7.jpeg","/zghartacrosscountry/8.jpeg",]
+        gallery: ["/zghartacrosscountry/1.JPEG","/zghartacrosscountry/2.JPEG","/zghartacrosscountry/3.JPEG","/zghartacrosscountry/4.JPEG","/zghartacrosscountry/5.JPEG","/zghartacrosscountry/6.JPEG","/zghartacrosscountry/7.JPEG","/zghartacrosscountry/8.JPEG",]
      },
      {
         id: 31,
@@ -514,7 +514,7 @@ Each edition is organized in collaboration with a local Rotaract club. Participa
 Since its launch, the project has organized five editions across six cities, including Ehden, Byblos, Batroun, Zahle, Tripoli, and Beirut, bringing together over 100 participants.
 
 Beyond cultural exploration, the initiative has helped create lasting relationships between clubs, leading to several joint projects and ongoing collaboration across the Rotaract network in Lebanon.`,
-gallery: ["/barmelebneniye/9.jpeg","/barmelebneniye/2.jpeg","/barmelebneniye/3.jpeg","/barmelebneniye/4.jpeg","/barmelebneniye/5.jpeg","/barmelebneniye/6.jpeg","/barmelebneniye/7.jpeg","/barmelebneniye/8.jpeg","/barmelebneniye/1.jpeg","/barmelebneniye/10.png","/barmelebneniye/11.png","/barmelebneniye/12.png"]
+gallery: ["/barmelebneniye/9.JPEG","/barmelebneniye/2.JPEG","/barmelebneniye/3.JPEG","/barmelebneniye/4.JPEG","/barmelebneniye/5.JPEG","/barmelebneniye/6.JPEG","/barmelebneniye/7.JPEG","/barmelebneniye/8.JPEG","/barmelebneniye/1.JPEG","/barmelebneniye/10.PNG","/barmelebneniye/11.PNG","/barmelebneniye/12.PNG"]
 
      },
      {
@@ -531,7 +531,7 @@ The day began with a welcome from Billy Karam, who shared stories from his caree
 After the tour, we presented Billy with a medal as a token of appreciation. In a memorable moment, he even offered one of our members a ride in his Porsche 996 GT2, creating an exciting highlight for the day.
 
 The event continued with lunch in Kaslik, followed by a spontaneous karting race, bringing out everyone’s competitive spirit and perfectly ending a day filled with learning, fun, and fellowship between clubs.`,
-        gallery: ["/driftanddine/1.jpg","/driftanddine/2.jpeg","/driftanddine/3.jpg","/driftanddine/4.jpg","/driftanddine/5.jpg","/driftanddine/6.jpg","/driftanddine/7.jpg","/driftanddine/8.jpg",]
+        gallery: ["/driftanddine/1.jpg","/driftanddine/2.JPEG","/driftanddine/3.jpg","/driftanddine/4.jpg","/driftanddine/5.jpg","/driftanddine/6.jpg","/driftanddine/7.jpg","/driftanddine/8.jpg",]
      },
      {
         id: 33,
@@ -588,7 +588,7 @@ Beyond fundraising, the initiative strengthened collaboration between Rotaract a
         slug: "let-peace-be-your-light",
         title: "Let Peace Be Your Light",
         description: "A collaborative candle fundraiser organized with the Rotaract Club of Tyre to support the restoration of Tyre Public Hospital.",
-        imageSrc: "/letpeacebeyourlight/4.jpeg",
+        imageSrc: "/letpeacebeyourlight/4.JPEG",
         category: "Finance",
         content: `The “Let Peace Be Your Light” initiative was a collaborative fundraising project organized by the Rotaract Club of Zgharta Zawie in partnership with the Rotaract Club of Tyre. The project focused on selling custom-designed scented candles engraved with a message of peace, symbolizing hope, unity, and healing.
 
@@ -597,7 +597,7 @@ The candles were produced in collaboration with a local small business that had 
 Each candle was sold for $12, with a production cost of $6, generating $6 in profit per candle. In total, 32 candles were sold, raising $192 in support of the restoration of Tyre Public Hospital, helping improve access to healthcare for the community.
 
 Beyond fundraising, the project strengthened collaboration between the two clubs and demonstrated how small initiatives can contribute to meaningful community impact.`,
-        gallery: ["/letpeacebeyourlight/1.jpeg","/letpeacebeyourlight/2.jpeg","/letpeacebeyourlight/3.jpeg"]
+        gallery: ["/letpeacebeyourlight/1.JPEG","/letpeacebeyourlight/2.JPEG","/letpeacebeyourlight/3.JPEG"]
      }
      ,
      {
@@ -614,7 +614,7 @@ The project aimed to restore the water system at Tyre Public Hospital, which had
 The initial fundraising goal was $4,049, but thanks to the dedication of Rotaractors and the generosity of donors, the initiative successfully raised $4,300. The funds were generated through multiple initiatives, including the “Stand with Lebanon” bracelet campaign, the “Let Peace Be Your Light” candle fundraiser, art sales, and fundraising events organized in Italy.
 
 This international collaboration ensured that the hospital could restore its water system and continue serving the community safely. The project also strengthened international Rotaract partnerships and led to a twinning relationship between the Rotaract Clubs of Zgharta Zawie and Afragola – Frattamaggiore “Porte di Napoli”, highlighting the power of cross-border cooperation to create meaningful impact.`,
-        gallery: ["/alcore/1.jpeg","/alcore/2.jpeg","/alcore/3.jpeg","/alcore/4.jpeg",]
+        gallery: ["/alcore/1.JPEG","/alcore/2.JPEG","/alcore/3.JPEG","/alcore/4.JPEG",]
      }
      ,
      {
@@ -631,7 +631,7 @@ When war broke out in Lebanon in October 2024, Alfonso reached out to express so
 As the collaboration grew, both clubs decided to formalize their partnership. On February 20, 2025, they officially signed their twinning agreement during the “Twinning & Trivia” event, marking the beginning of a long-term relationship built on friendship, cooperation, and international understanding.
 
 This twinning reflects the spirit of Rotaract by showing how connections between members from different countries can grow into lasting partnerships, encouraging collaboration, cultural exchange, and joint projects that create meaningful impact across borders.`,
-        gallery: ["/twinningnapoli/1.jpeg","/twinningnapoli/2.jpeg","/twinningnapoli/3.png", "/twinningnapoli/4.jpeg"]
+        gallery: ["/twinningnapoli/1.JPEG","/twinningnapoli/2.JPEG","/twinningnapoli/3.PNG", "/twinningnapoli/4.JPEG"]
      },
      {
         id: 36,
@@ -668,7 +668,7 @@ As the initiative continues, future sessions will cover topics such as leadershi
         slug: "paths-and-perspectives",
         title: "Paths & Perspectives",
         description: "A nationwide professional development initiative where seven Rotaract clubs across Lebanon organized career-focused sessions to help students and young professionals transition from education to the workforce.",
-        imageSrc: "/Paths & Perspectives/1.jpeg",
+        imageSrc: "/Paths & Perspectives/1.JPEG",
         category: "Professional Development",
         content: `Paths & Perspectives was a collaborative initiative organized by seven Rotaract clubs across Lebanon to help students and young professionals prepare for the transition from university to the professional world.
 
@@ -677,6 +677,6 @@ The project consisted of a series of interactive sessions led by industry expert
 Topics included Erasmus+ exchange opportunities, LinkedIn networking strategies, resume writing and interview preparation, and workplace communication and conflict resolution. Each session provided participants with practical insights and tools that could help them navigate today’s competitive job market.
 
 By bringing together multiple Rotaract clubs, speakers, and organizations, the project became one of the largest Rotaract professional development initiatives in Lebanon, demonstrating the power of collaboration and the organization’s commitment to empowering young professionals.`,
-        gallery: ["/Paths & Perspectives/2.jpeg","/Paths & Perspectives/3.jpeg","/Paths & Perspectives/4.jpeg","/Paths & Perspectives/5.jpeg","/Paths & Perspectives/6.jpeg","/Paths & Perspectives/7.PNG","/Paths & Perspectives/8.jpeg","/Paths & Perspectives/9.jpeg","/Paths & Perspectives/10.jpeg","/Paths & Perspectives/11.jpeg","/Paths & Perspectives/12.jpeg","/Paths & Perspectives/13.jpeg","/Paths & Perspectives/14.jpeg","/Paths & Perspectives/15.jpeg","/Paths & Perspectives/16.jpeg","/Paths & Perspectives/17.jpeg"]
+        gallery: ["/Paths & Perspectives/2.JPEG","/Paths & Perspectives/3.JPEG","/Paths & Perspectives/4.JPEG","/Paths & Perspectives/5.JPEG","/Paths & Perspectives/6.JPEG","/Paths & Perspectives/7.PNG","/Paths & Perspectives/8.JPEG","/Paths & Perspectives/9.JPEG","/Paths & Perspectives/10.JPEG","/Paths & Perspectives/11.JPEG","/Paths & Perspectives/12.JPEG","/Paths & Perspectives/13.JPEG","/Paths & Perspectives/14.JPEG","/Paths & Perspectives/15.JPEG","/Paths & Perspectives/16.JPEG","/Paths & Perspectives/17.JPEG"]
      }
 ];

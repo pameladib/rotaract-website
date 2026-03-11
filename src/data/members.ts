@@ -37,7 +37,7 @@ export const members: Member[] = [
         role: "Treasurer",
         bio: "His passion for medicine led him to join Rotaract, whose mission and values align with his commitment to helping others and creating a positive impact.",
         occupation: "Medical Student",
-        imageSrc: "/members/george.jpg",
+        imageSrc: "/members/george.JPG",
         division: "Board"
     },
     {
@@ -82,7 +82,7 @@ export const members: Member[] = [
         role: "Finance Director",
         bio: "A pre-med student passionate about medicine and driven by curiosity and continuous learning. Enjoys staying active and contributing to community initiatives.",
         occupation: "Pre-med Student",
-        imageSrc: "members/rita.jpg",
+        imageSrc: "members/rita.JPG",
         division: "Directors"
     },
     
@@ -140,7 +140,7 @@ export const members: Member[] = [
         role: "Guest",
         bio: "A law student with a strong interest in politics and the legal field, passionate about justice and social issues. Also enjoys fashion and creative expression.",
         occupation: "Law Student",
-        imageSrc: "/members/maria.jpg",
+        imageSrc: "/members/maria.JPG",
         division: "Guests"
     },
      {
@@ -149,7 +149,7 @@ export const members: Member[] = [
         role: "Guest",
         bio: "A law student passionate about justice and the study of law. Interested in developing legal knowledge and skills.",
         occupation: "Law Student",
-        imageSrc: "/members/joe.jpg",
+        imageSrc: "/members/joe.JPG",
         division: "Guests"
     },
     {
@@ -158,7 +158,7 @@ export const members: Member[] = [
         role: "Guest",
         bio: "In her free time, she enjoys reading books on self-development or romance, practicing yoga, and staying active in her community through social and religious events.",
         occupation: "Pharmacist",
-        imageSrc: "/members/anna.jpg",
+        imageSrc: "/members/anna.JPG",
         division: "Guests"
     },
 
