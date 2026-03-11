@@ -13,15 +13,15 @@ export default function ProjectCarousel() {
     useEffect(() => {
         function handleResize() {
             if (window.innerWidth < 768) {
-                setVisibleCount(1); // mobile
+                setVisibleCount(1); 
             } else if (window.innerWidth < 1024) {
-                setVisibleCount(2); // tablet
+                setVisibleCount(2); 
             } else {
-                setVisibleCount(3); // desktop
+                setVisibleCount(3); 
             }
         }
 
-        handleResize(); // run once when component loads
+        handleResize(); 
 
         window.addEventListener("resize", handleResize);
 
@@ -45,7 +45,6 @@ export default function ProjectCarousel() {
             prev === projects.length - visibleCount ? 0 : prev + 1
         );
     }
-
     return (
         <div className="w-full items-center justify-center gap-6 py-10">
             <h2 className="text-4xl md:text-4xl font-bold text-center mb-10 mt-16">

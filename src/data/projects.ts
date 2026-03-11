@@ -169,7 +169,7 @@ The activity reminded us that small gestures can make a meaningful difference an
     {
         id: 10,
         slug: "bowling-night",
-        title: "Bowling Night with Rotaract Club of Tripoli",
+        title: "Bowling Night",
         description: "A friendly social gathering with Rotaract Club of Tripoli to strengthen connections between clubs.",
         imageSrc: "/bowling/bowling.jpg",
         category: "Club Service",
@@ -385,7 +385,7 @@ The collected data was shared with the clinic to allow follow-up support for ind
      {
         id: 24,
         slug: "16-Days-of-Activism-Against-Gender-Based-Violence",
-        title: "16 Days of Activism Against Gender Based Violence",
+        title: "Stand Against Gender-Based Violence",
         description: "A multi-phase awareness initiative organized as part of the global 16 Days of Activism Against Gender-Based Violence, combining education, discussion, and international collaboration.",
         imageSrc: "/genderbasedviolence/genderbasedviolence.jpg",
         category: "Community Service",
@@ -419,21 +419,6 @@ All profits generated from our stands and the raffle were directed toward our co
 
 Even with the unexpected challenges, the Christmas Market successfully brought the community together, highlighted local businesses, and celebrated the spirit of giving during the holiday season.`,
 gallery: ["/christmasmarket/1.jpg","/christmasmarket/2.jpg","/christmasmarket/3.JPEG","/christmasmarket/4.JPEG","/christmasmarket/5.JPEG","/christmasmarket/6.jpg","/christmasmarket/7.jpg","/christmasmarket/8.JPEG",]
-     },
-     {
-        id: 26,
-        slug: "a-sweet-gesture",
-        title: "A Sweet Gesture",
-        description: "A small Christmas Eve initiative to thank Red Cross volunteers by delivering leftover desserts from our bake sale.",
-        imageSrc: "/asweetgesture.JPEG",
-        category: "Community Service",
-        content: `On Christmas Eve, our club decided to do something special for the Red Cross volunteers who were spending the holiday helping others instead of being with their families.
-
-After a bake sale held the night before, we had several desserts left over, including tiramisu cups, brownies, cakes, and jello. Rather than letting the food go to waste, we chose to donate it to the volunteers working that night as a small gesture of appreciation.
-
-With quick planning, we contacted the Red Cross to coordinate the delivery. Our president and past president packaged the desserts and delivered them to the center on Christmas Eve, giving the volunteers something sweet to enjoy during their shift.
-
-Although simple, the initiative allowed us to express gratitude, spread a bit of holiday cheer, and reduce food waste at the same time. It served as a reminder that even small acts of kindness can make a meaningful difference in the community.`
      },
      {
         id: 27,
@@ -620,7 +605,7 @@ This international collaboration ensured that the hospital could restore its wat
      {
         id: 35,
         slug: "twinning-napoli",
-        title: "Twinning - Zgharta Zawie X Afragola – Frattamaggiore Porte di Napoli",
+        title: "Twinning",
         description: "A twinning partnership between the Rotaract Club of Zgharta Zawie and the Rotaract Club of Afragola – Frattamaggiore “Porte di Napoli”, built on international friendship and collaboration.",
         imageSrc: "/twinningnapoli/Twinning Certificate - D2101 Template.JPEG",
         category: "International Understanding",

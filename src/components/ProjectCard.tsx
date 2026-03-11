@@ -33,10 +33,10 @@ export default function ProjectCard({
             </div>
 
             <div className="p-5">
-                <h3 className="text-xl font-semibold group-hover:text-pink-600 transition-colors">
+                <h3 className="text-xl font-semibold group-hover:text-pink-600 transition-colors min-h-[48px]">
                     {title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                <p className="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-3">
                     {description}
                 </p>
             </div>
