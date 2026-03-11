@@ -41,19 +41,19 @@ export default function Navbar() {
           Home
         </Link>
 
-        <Link href="/" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-200 active:scale-95 transition">
+        <Link href="/about" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-200 active:scale-95 transition">
           About
         </Link>
 
-        <Link href="/" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-200 active:scale-95 transition">
+        <Link href="/members" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-200 active:scale-95 transition">
           Members
         </Link>
 
-        <Link href="/" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-200 active:scale-95 transition">
+        <Link href="/projects" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-100 active:scale-95 transition">
           Projects
         </Link>
 
-        <Link href="/" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-200 active:scale-95 transition">
+        <Link href="/contact" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-100 active:scale-95 transition">
           Contact Us
         </Link>
       </div>
