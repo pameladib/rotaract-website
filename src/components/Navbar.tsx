@@ -37,38 +37,50 @@ export default function Navbar() {
 
 
       <div className="hidden md:flex justify-center gap-8 mt-4">
-        <Link href="/" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-200 active:scale-95 transition">
-          Home
-        </Link>
+  <Link href="/" className="px-2 py-1 rounded-md hover:text-pink-600 transition">
+    Home
+  </Link>
 
-        <Link href="/about" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-200 active:scale-95 transition">
-          About
-        </Link>
+  <Link href="/about" className="px-2 py-1 rounded-md hover:text-pink-600 transition">
+    About
+  </Link>
 
-        <Link href="/members" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-200 active:scale-95 transition">
-          Members
-        </Link>
+  <Link href="/members" className="px-2 py-1 rounded-md hover:text-pink-600 transition">
+    Members
+  </Link>
 
-        <Link href="/projects" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-100 active:scale-95 transition">
-          Projects
-        </Link>
+  <Link href="/projects" className="px-2 py-1 rounded-md hover:text-pink-600 transition">
+    Projects
+  </Link>
 
-        <Link href="/contact" className="px-2 py-1 rounded-md hover:text-pink-600 active:bg-gray-100 active:scale-95 transition">
-          Contact Us
-        </Link>
-      </div>
+  <Link href="/contact" className="px-2 py-1 rounded-md hover:text-pink-600 transition">
+    Contact Us
+  </Link>
+</div>
 
-      {menuOpen && (
-        <div className="flex flex-col gap-3 mt-4 md:hidden">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/members">Members</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/contact">Contact Us</Link>
-          {/* <Link href="/explore">Explore the world</Link>
-          <Link href="/cookbook">International Rotaract Cookbook</Link> */}
-        </div>
-      )}
+{menuOpen && (
+  <div className="flex flex-col gap-3 mt-4 md:hidden">
+    <Link href="/" className="px-3 py-2 rounded-md active:bg-gray-200 transition">
+      Home
+    </Link>
+
+    <Link href="/about" className="px-3 py-2 rounded-md active:bg-gray-200 transition">
+      About
+    </Link>
+
+    <Link href="/members" className="px-3 py-2 rounded-md active:bg-gray-200 transition">
+      Members
+    </Link>
+
+    <Link href="/projects" className="px-3 py-2 rounded-md active:bg-gray-200 transition">
+      Projects
+    </Link>
+
+    <Link href="/contact" className="px-3 py-2 rounded-md active:bg-gray-200 transition">
+      Contact Us
+    </Link>
+  </div>
+)}
 
     </nav>
   );
