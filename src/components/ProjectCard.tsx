@@ -16,10 +16,11 @@ export default function ProjectCard({
     return (
         <Link
             href={href}
-            className="
+           className="
   group block overflow-hidden rounded-2xl bg-white
   shadow-md transition-transform duration-200
   hover:scale-[1.03] hover:shadow-xl
+  active:scale-[0.97]
   w-64
 "
         >

@@ -11,8 +11,21 @@ export default function ProjectCarousel() {
     const visibleProjects = projects.slice(startIndex, startIndex + visibleCount);
 
     useEffect(() => {
-        if (window.innerWidth < 768) setVisibleCount(1);
-        else setVisibleCount(3);
+        function handleResize() {
+            if (window.innerWidth < 768) {
+                setVisibleCount(1); // mobile
+            } else if (window.innerWidth < 1024) {
+                setVisibleCount(2); // tablet
+            } else {
+                setVisibleCount(3); // desktop
+            }
+        }
+
+        handleResize(); // run once when component loads
+
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     useEffect(() => {
@@ -40,30 +53,30 @@ export default function ProjectCarousel() {
             </h2>
             <div className="flex justify-center">
 
-            <button
-                onClick={handleLeftClick}
-                className="self-center p-3 rounded-full bg-white shadow hover:bg-gray-100 transition"
-            >
-                <ChevronLeft size={28} />
-            </button>
+                <button
+                    onClick={handleLeftClick}
+                    className="self-center p-3 rounded-full bg-white shadow hover:bg-gray-100 transition"
+                >
+                    <ChevronLeft size={28} />
+                </button>
 
-            <div className="flex gap-6">
-                {visibleProjects.map((project) => (
-                    <ProjectCard
-                        key={project.id}
-                        href={`/projects/${project.slug}`}
-                        title={project.title}
-                        description={project.description}
-                        imageSrc={project.imageSrc}
-                    />
-                ))}
-            </div>
+                <div className="flex gap-6">
+                    {visibleProjects.map((project) => (
+                        <ProjectCard
+                            key={project.id}
+                            href={`/projects/${project.slug}`}
+                            title={project.title}
+                            description={project.description}
+                            imageSrc={project.imageSrc}
+                        />
+                    ))}
+                </div>
 
-            <button
-                onClick={handleRightClick}
-                className="self-center p-3 rounded-full bg-white shadow hover:bg-gray-100 transition">
-                <ChevronRight size={28} />
-            </button>
+                <button
+                    onClick={handleRightClick}
+                    className="self-center p-3 rounded-full bg-white shadow hover:bg-gray-100 transition">
+                    <ChevronRight size={28} />
+                </button>
             </div>
         </div>
     );

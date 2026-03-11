@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-zinc-50">
-    
+
 
       <main className="py-10">
         <h1 className="mb-12 mt-2 text-center text-4xl font-bold text-gray-900">
@@ -23,19 +23,20 @@ export default function ProjectsPage() {
                   {category} Projects
                 </h2>
 
-                
+
                 <div className="ml-6 h-px flex-1 bg-zinc-200" />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:overflow-x-auto gap-6 pb-3 px-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 xl:flex xl:overflow-x-auto gap-6 pb-3 px-2 md:px-4 justify-items-center">
                 {items.map((item) => (
-                  <ProjectCard
-                    key={item.id}
-                    href={`/projects/${item.slug}`}
-                    title={item.title}
-                    description={item.description}
-                    imageSrc={item.imageSrc}
-                  />
+                  <div key={item.id} className="lg:flex-shrink-0">
+                    <ProjectCard
+                      href={`/projects/${item.slug}`}
+                      title={item.title}
+                      description={item.description}
+                      imageSrc={item.imageSrc}
+                    />
+                  </div>
                 ))}
               </div>
             </section>

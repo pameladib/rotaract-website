@@ -2,6 +2,7 @@ type MemberCardProps = {
   name: string;
   role: string;
   bio: string;
+  occupation: string;
   imageSrc: string;
 };
 
@@ -9,13 +10,14 @@ export default function MemberCard({
   name,
   role,
   bio,
+  occupation,
   imageSrc,
 }: MemberCardProps) {
   return (
     <section className="py-12">
       <div className="mx-auto max-w-5xl px-6 grid items-center gap-10 md:grid-cols-2">
 
-        
+
         <div className="flex justify-center md:justify-start">
           <img
             src={imageSrc}
@@ -30,7 +32,7 @@ export default function MemberCard({
           />
         </div>
 
-       
+
         <div className="text-center md:text-left">
           <h3 className="text-3xl font-semibold tracking-tight text-gray-900">
             {name}
@@ -38,11 +40,13 @@ export default function MemberCard({
 
           <p className="mt-2 text-lg text-pink-600">{role}</p>
 
+          <p className="mt-3 text-sm text-gray-500 italic">
+            {occupation}
+          </p>
+
           <p className="mt-4 text-gray-700 leading-relaxed max-w-prose mx-auto md:mx-0">
             {bio}
           </p>
-
-          <div className="mt-6 h-1 w-12 bg-gray-900 mx-auto md:mx-0" />
         </div>
 
       </div>

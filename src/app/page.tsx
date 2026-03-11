@@ -85,7 +85,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="m-4 bg-gray-50">
+        <section className="mt-4 bg-gray-50">
           <ProjectCarousel />
         </section>
 

@@ -41,6 +41,7 @@ export default function MembersPage() {
                     name={item.name}
                     role={item.role}
                     bio={item.bio}
+                    occupation={item.occupation}
                     imageSrc={item.imageSrc}
                   />
                 ))}

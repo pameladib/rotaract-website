@@ -36,7 +36,7 @@ This project is also part of my personal journey in learning:
 - TypeScript
 - Tailwind CSS
 - Git & GitHub
-- Deployment (planned): Vercel
+- Deployment: Vercel
 
 ---
 
@@ -48,9 +48,6 @@ This project is also part of my personal journey in learning:
 - Members page (organized by division)
 - Projects page (categorized)
 - Dynamic project pages using slugs
-- Placeholder pages for:
-  - Explore the World
-  - International Cookbook
 
 ---
 
@@ -94,7 +91,7 @@ Open in browser:
 
 You can visit the deployed website here:
 
-https://rotaract-website-rho.vercel.app/
+https://rotaractzghartazawie.com
 
 ---
 
