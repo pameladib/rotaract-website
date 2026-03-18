@@ -37,6 +37,8 @@ This project is also part of my personal journey in learning:
 - Tailwind CSS
 - Git & GitHub
 - Deployment: Vercel
+- Database: Supabase (PostgreSQL)
+- ORM: Prisma
 
 ---
 
@@ -48,22 +50,32 @@ This project is also part of my personal journey in learning:
 - Members page (organized by division)
 - Projects page (categorized)
 - Dynamic project pages using slugs
+- static (mock) data
 
 ---
 
-## Planned Features (V2)
+## Planned Features (V2) – In Progress 
 
-- Backend & database integration
-- Admin panel
-- Explore the World:
-  - Interactive world map
-  - Country articles
-  - Quiz system
-  - Digital Rotaract Passport
-- Cookbook:
-  - International recipes
-  - Individual recipe pages
-  - Downloadable PDF feature
+- Backend & database integration (Prisma + PostgreSQL)
+- Admin panel:
+  - Add, edit, and delete projects
+  - Add, edit, and manage members
+  - Basic dashboard for content management
+
+---
+
+## Planned Features (V3) – Planned 
+
+### Explore the World
+- Interactive world map
+- Country articles
+- Quiz system
+- Digital Rotaract Passport
+
+### Cookbook
+- International recipes
+- Individual recipe pages
+- Downloadable PDF feature
 
 ---
 
