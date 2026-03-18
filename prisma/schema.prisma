@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Project {
+  id          Int             @id @default(autoincrement())
+  slug        String          @unique
+  title       String
+  description String
+  imageSrc    String
+  category    ProjectCategory
+  content     String
+  gallery     String[]        @default([])
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+enum ProjectCategory {
+  COMMUNITY_SERVICE
+  PROFESSIONAL_DEVELOPMENT
+  INTERNATIONAL_UNDERSTANDING
+  CLUB_SERVICE
+  FINANCE
+  PUBLIC_IMAGE
+}
+
+model Member {
+  id         Int      @id @default(autoincrement())
+  name       String
+  role       String
+  bio        String?
+  occupation String
+  imageSrc   String
+  division   Division
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+enum Division {
+  BOARD
+  DIRECTORS
+  MEMBERS
+  GUESTS
+}

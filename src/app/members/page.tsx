@@ -1,8 +1,17 @@
 import MemberCard from "@/components/MemberCard";
-import Navbar from "@/components/Navbar";
-import { members, divisions } from "@/data/members";
+import { Division } from "generated/prisma/client";
+import prisma  from "lib/prisma";
 
-export default function MembersPage() {
+export default async function MembersPage() {
+  const members = await prisma.member.findMany();
+
+  const divisionLabels = {
+  BOARD: "Board",
+  DIRECTORS: "Directors",
+  MEMBERS: "Members",
+  GUESTS: "Guest",
+}
+
   return (
     <div className="min-h-screen bg-zinc-50">
     
@@ -12,9 +21,9 @@ export default function MembersPage() {
           Meet Our Members!
         </h1>
 
-        {divisions.map((division) => {
+        {Object.keys(divisionLabels).map((division) => {
           const items = members.filter(
-            (member) => member.division === division
+            (member) => member.division === (division as Division)
           );
 
           if (items.length === 0) return null;
@@ -27,7 +36,7 @@ export default function MembersPage() {
                 <div className="h-px flex-1 bg-zinc-200" />
 
                 <h2 className="mx-6 text-3xl font-semibold text-pink-600 text-center">
-                  {division}
+                  {divisionLabels[division as Division]}
                 </h2>
 
                 <div className="h-px flex-1 bg-zinc-200" />
@@ -40,7 +49,7 @@ export default function MembersPage() {
                     key={item.id}
                     name={item.name}
                     role={item.role}
-                    bio={item.bio}
+                    bio={item.bio ?? undefined}
                     occupation={item.occupation}
                     imageSrc={item.imageSrc}
                   />

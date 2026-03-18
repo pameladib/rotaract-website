@@ -1,7 +1,7 @@
 type MemberCardProps = {
   name: string;
   role: string;
-  bio: string;
+  bio?: string;
   occupation: string;
   imageSrc: string;
 };

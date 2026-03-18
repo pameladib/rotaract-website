@@ -1,8 +1,19 @@
 import ProjectCard from "@/components/ProjectCard";
-import { projects, categories } from "@/data/projects";
-import Navbar from "@/components/Navbar";
+import { ProjectCategory } from "generated/prisma/client";
+import prisma from "lib/prisma";
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const projects = await prisma.project.findMany();
+
+  const categoryLabels = {
+    COMMUNITY_SERVICE: "Community Service",
+    INTERNATIONAL_UNDERSTANDING: "International Understanding",
+    PROFESSIONAL_DEVELOPMENT: "Professional Development",
+    CLUB_SERVICE: "Club Service",
+    FINANCE: "Finance",
+    PUBLIC_IMAGE: "Public Image"
+  }
+
   return (
     <div className="min-h-screen bg-zinc-50">
 
@@ -12,15 +23,15 @@ export default function ProjectsPage() {
           Our Projects
         </h1>
 
-        {categories.map((category) => {
-          const items = projects.filter((project) => project.category === category);
+        {Object.keys(categoryLabels).map((category) => {
+          const items = projects.filter((project) => project.category === category as ProjectCategory);
           if (items.length === 0) return null;
 
           return (
             <section key={category} className="mb-14">
               <div className="mb-5 flex items-center justify-between">
                 <h2 className="text-2xl font-semibold text-pink-600 px-4">
-                  {category} Projects
+                  {categoryLabels[category as ProjectCategory]} Projects
                 </h2>
 
 
