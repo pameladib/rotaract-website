@@ -1,6 +1,6 @@
 import ProjectCard from "@/components/ProjectCard";
-import { ProjectCategory } from "generated/prisma/client";
-import prisma from "lib/prisma";
+import { ProjectCategory } from "@/generated/prisma/client";
+import prisma from "@/lib/prisma";
 
 export default async function ProjectsPage() {
   const projects = await prisma.project.findMany();

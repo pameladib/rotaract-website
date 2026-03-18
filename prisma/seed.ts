@@ -1,4 +1,4 @@
-import { PrismaClient, ProjectCategory, Division } from "../generated/prisma/client";
+import { PrismaClient, ProjectCategory, Division } from "../src/generated/prisma/client";
 import { projects } from "@/data/projects";
 import { members } from "@/data/members";
 import { PrismaPg } from "@prisma/adapter-pg";
