@@ -1,0 +1,12 @@
+import prisma from "@/lib/prisma";
+import MembersList from "@/components/admin/MembersList";
+
+export default async function Members() {
+  const members = await prisma.member.findMany();
+
+  return (
+    <div>
+      <MembersList members={members}/>
+    </div>
+  );
+}
