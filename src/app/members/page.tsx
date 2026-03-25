@@ -9,7 +9,7 @@ export default async function MembersPage() {
     BOARD: "Board",
     DIRECTORS: "Directors",
     MEMBERS: "Members",
-    GUESTS: "Guest",
+    GUESTS: "Guests",
   }
 
   return (

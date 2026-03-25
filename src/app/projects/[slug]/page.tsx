@@ -1,17 +1,21 @@
-import Navbar from "@/components/Navbar";
-import { projects } from "@/data/projects";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import prisma from "@/lib/prisma";
 
 export default async function ProjectPage({
-  params,
+  params // function receives one argument -> object with params property -> use object destructuring to directly extract params
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>; // a Promise that will resolve into an object like { slug: string }
 }) {
-  const { slug } = await params;
+  const { slug } = await params; // params is a promise
+  /* we must await it -> it resolves into an object -> we use { slug } (object destructuring) to extract its slug property directly 
+  same as:
+  const obj = await params;
+  const slug = obj.slug;*/
 
-  const project = projects.find((p) => p.slug === slug);
+  const project = await prisma.project.findUnique({
+    where: { slug },
+  });
 
   if (!project) {
     notFound();
@@ -55,7 +59,7 @@ export default async function ProjectPage({
         </div>
 
 
-        {project.gallery && (
+        {project.gallery.length > 0 && (
           <div className="mt-16">
             <h2 className="text-2xl font-semibold mb-6">Gallery</h2>
 
