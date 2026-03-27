@@ -13,6 +13,8 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Division } from "@/generated/prisma/client";
 import { uploadImage } from "@/lib/upload";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 type Props = {
     initialData?: {
@@ -27,6 +29,9 @@ type Props = {
 }
 
 export default function MemberForm({ initialData }: Props) {
+    const [preview, setPreview] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false);
+    const router = useRouter();
     const [file, setFile] = useState<File | null>(null);
     const [form, setForm] = useState({ // if initialData is defined, use its properties. If undefined, use empty strings ""
         name: initialData?.name || "",
@@ -54,21 +59,25 @@ export default function MemberForm({ initialData }: Props) {
         if (!selected) return; // if no file is selected, return (stop function)
 
         if (!selected.type.startsWith("image/")) { // validate file type (optional)
-            alert("Only images allowed");
+            toast.error("Only images allowed");
             return;
         }
 
         if (selected.size > 2 * 1024 * 1024) { // validate file size (limit = 2 MB)
-            alert("Max size is 2MB");
+            toast.error("Max size is 2MB");
             return;
         }
 
         setFile(selected); // store file in state to upload later
+
+        setPreview(URL.createObjectURL(selected)); // preview URL
     }
 
 
     async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
         e.preventDefault();
+
+        setLoading(true);
 
         let imageUrl = form.imageSrc;
 
@@ -89,8 +98,8 @@ export default function MemberForm({ initialData }: Props) {
             });
 
             if (res.ok) {
-                const message = isEdit ? "Member Updated" : "Member created";
-                alert(message);
+                const message = isEdit ? "Member Updated successfully" : "Member created successfully";
+                toast.success(message);
 
                 // reset form on create
                 if (!isEdit) {
@@ -104,13 +113,17 @@ export default function MemberForm({ initialData }: Props) {
                     });
 
                     setFile(null);
+
                 }
+                router.push("/admin/members");
 
             }
 
         } catch (err) {
-            alert("Upload failed");
+            toast.error("Upload failed");
             console.error(err);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -214,11 +227,14 @@ export default function MemberForm({ initialData }: Props) {
         hover:file:bg-pink-200
         cursor-pointer"
                             />
+                            {(preview || form.imageSrc) && (
+                                <img src={preview || form.imageSrc} alt="Preview" className="w-32 h-32 object-cover rounded-lg mt-2 border" />
+                            )}
                         </div>
                     </div>
 
-                    <Button className="w-full mt-4 transition transform hover:scale-105">
-                        {buttonLabel}
+                    <Button disabled={loading} className="w-full mt-4 transition transform hover:scale-105">
+                        {loading ? "Saving..." : buttonLabel}
                     </Button>
                 </form>
             </div>
