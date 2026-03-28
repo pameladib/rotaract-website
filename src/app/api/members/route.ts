@@ -9,7 +9,7 @@ export async function POST(req: Request) {
         const { name, role, bio, occupation, division, imageSrc } = body;
 
         // validation
-        if (!name || !role || !occupation || !division) { // if any of the fields is null -> stop creation
+        if (!name || !role || !occupation || !division || !imageSrc) { // if any of the fields is null -> stop creation
             return NextResponse.json(
                 { error: "Missing required fields" },
                 { status: 400 } // bad request
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
 
         const member = await prisma.member.create({
             data: {
-                name,
+                name, // object shorthand syntax, same as name: name
                 role,
                 bio,
                 occupation,
