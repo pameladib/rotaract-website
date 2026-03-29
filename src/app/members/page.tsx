@@ -1,5 +1,5 @@
 import MemberCard from "@/components/MemberCard";
-import { Division } from "@/generated/prisma/client";
+import { Division } from "generated/prisma/client";
 import prisma from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";

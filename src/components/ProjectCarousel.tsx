@@ -1,11 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { projects } from "@/data/projects"; // @ is an alias for the src folder
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProjectCard from "./ProjectCard"; // ./ means current folder
+import type { Project } from "generated/prisma/client";
 
-export default function ProjectCarousel() {
+type Props = {
+    projects:  Project[];
+};
+
+export default function ProjectCarousel( { projects } : Props) {
     const [visibleCount, setVisibleCount] = useState(3);
     const [startIndex, setStartIndex] = useState(0);
     const visibleProjects = projects.slice(startIndex, startIndex + visibleCount);

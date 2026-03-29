@@ -1,5 +1,5 @@
 "use client";
-import type { Project } from "@/generated/prisma/client";
+import type { Project } from "generated/prisma/client";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { useState } from "react";

@@ -3,8 +3,11 @@ import Link from "next/link";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import prisma from "@/lib/prisma";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const projects = await prisma.project.findMany();
+
   return (
     <div className="bg-white">
       <header>
@@ -86,7 +89,7 @@ export default function HomePage() {
         </section>
 
         <section className="mt-4 bg-gray-50">
-          <ProjectCarousel />
+          <ProjectCarousel projects = {projects}/>
         </section>
 
         <section className="py-20">
