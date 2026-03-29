@@ -26,7 +26,7 @@ async function generateUniqueSlug(title: string) {
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { title, description, category, content, imageSrc } = body;
+        const { title, description, category, content, imageSrc, rotaryYear } = body;
 
         // validation
         if (!title || !description || !category || !content || !imageSrc) { // if any of the fields is null -> stop creation
@@ -53,6 +53,7 @@ export async function POST(req: Request) {
                 imageSrc,
                 category,
                 content,
+                rotaryYear
             }
         });
 

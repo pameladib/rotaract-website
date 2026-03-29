@@ -26,6 +26,7 @@ type Props = {
         imageSrc: string;
         category: ProjectCategory;
         gallery: string[];
+        rotaryYear: string;
     };
 }
 
@@ -41,6 +42,7 @@ export default function ProjectForm({ initialData }: Props) {
         content: initialData?.content || "",
         category: initialData?.category || "",
         imageSrc: initialData?.imageSrc || "",
+        rotaryYear: initialData?.rotaryYear || "",
     });
 
     const categoryLabels = {
@@ -55,6 +57,16 @@ export default function ProjectForm({ initialData }: Props) {
     const isEdit = !!initialData; // !! converts initialData into a boolean. If initialData is defined -> true, else false
     const buttonLabel = isEdit ? "Update Project" : "Add Project";
     const url = isEdit ? `/api/projects/${initialData.id}` : "/api/projects";
+
+
+    function generateRotaryYears(startYear: number, count: number) {
+        return Array.from({ length: count }, (_, i) => {
+            const year = startYear + i;
+            return `${year}-${year + 1}`;
+        });
+    }
+
+    const rotaryYears = generateRotaryYears(2024, 6);
 
     function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
         const selected = e.target.files?.[0]; // get the selected file
@@ -112,6 +124,7 @@ export default function ProjectForm({ initialData }: Props) {
                         content: "",
                         category: "",
                         imageSrc: "",
+                        rotaryYear: ""
                     });
 
                     setFile(null);
@@ -135,7 +148,7 @@ export default function ProjectForm({ initialData }: Props) {
         const { name, value } = e.target;
 
         setForm({
-            ...form, 
+            ...form,
             [name]: value, // computed property name
         });
     }
@@ -181,6 +194,28 @@ export default function ProjectForm({ initialData }: Props) {
                     </div>
 
                     <div className="space-y-1">
+                        <label className="text-sm text-gray-600">Year</label>
+                        <Select
+                            value={form.rotaryYear}
+                            onValueChange={(value) =>
+                                setForm({ ...form, rotaryYear: value })
+                            }
+                        >
+                            <SelectTrigger className="w-full">
+                                <SelectValue placeholder="Select Year" />
+                            </SelectTrigger>
+
+                            <SelectContent>
+                                {rotaryYears.map((year) => (
+                                    <SelectItem key={year} value={year}>
+                                        {year}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+                    </div>
+
+                    <div className="space-y-1">
                         <label className="text-sm text-gray-600">Category</label>
                         <Select
                             value={form.category}
@@ -189,13 +224,13 @@ export default function ProjectForm({ initialData }: Props) {
                             }
                         >
                             <SelectTrigger className="w-full">
-                                <SelectValue placeholder="Select category" /> 
+                                <SelectValue placeholder="Select category" />
                             </SelectTrigger>
 
                             <SelectContent>
                                 {Object.keys(categoryLabels).map((category) => (
                                     <SelectItem key={category} value={category}> { /* key is for React for list rendering, and value is for select*/}
-                                        {categoryLabels[category as ProjectCategory]} 
+                                        {categoryLabels[category as ProjectCategory]}
                                     </SelectItem>
                                 ))}
                             </SelectContent>
