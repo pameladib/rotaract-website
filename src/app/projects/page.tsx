@@ -1,5 +1,5 @@
 import ProjectCard from "@/components/ProjectCard";
-import { ProjectCategory } from "generated/prisma/client";
+import { ProjectCategory } from "../../../generated/prisma/client";
 import prisma from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";

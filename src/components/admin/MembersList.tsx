@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import type { Member } from "generated/prisma/client";
+import type { Member } from "../../../generated/prisma/client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

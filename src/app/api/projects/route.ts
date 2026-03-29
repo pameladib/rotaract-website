@@ -1,6 +1,6 @@
 import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
-import { ProjectCategory } from "generated/prisma/client";
+import { ProjectCategory } from "../../../../generated/prisma/client";
 
 async function generateUniqueSlug(title: string) {
     const baseSlug = title

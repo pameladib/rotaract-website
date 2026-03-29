@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProjectCard from "./ProjectCard"; // ./ means current folder
-import type { Project } from "generated/prisma/client";
+import type { Project } from "../../generated/prisma/client";
 
 type Props = {
     projects:  Project[];
