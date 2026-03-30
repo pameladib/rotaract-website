@@ -30,7 +30,7 @@ export async function POST(req: Request) {
                 bio,
                 occupation,
                 division,
-                imageSrc
+                imageSrc,
             }
         });
 

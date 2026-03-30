@@ -55,7 +55,8 @@ export async function PATCH(
       where: { id: Number(id) }, // prisma.id is always a string so we must convert it to a number using Number()
       data: {
         ...body, // take everything the frontend sent and use it to update
-        ...(body.imageSrc === "" && { imageSrc: existing.imageSrc }) // but if the imageSrc sent is an empty string "", reuse the existing image -> prevents image loss if no image is sent on update
+        ...(body.imageSrc === "" && { imageSrc: existing.imageSrc }),
+        ...(body.gallery.length === 0 && { gallery: existing.gallery })// but if the imageSrc sent is an empty string "", reuse the existing image -> prevents image loss if no image is sent on update
       } // this is conditional object building using the spread operator ... and JS AND (&&) which returns the first falsy value or the last one if all values are truthy
     });
 
