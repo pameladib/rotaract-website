@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 import type { Member } from "../../../generated/prisma/client";
+import { NextResponse } from "next/server";
+import { Role } from "../../../generated/prisma/client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,6 +22,24 @@ export default function MembersList({ members }: { members: Member[] }) {
   const [open, setOpen] = useState(false); // for modal dialog
   const [selectedId, setSelectedId] = useState<number | null>(null); // selected member to delete
   const [search, setSearch] = useState("");
+
+  const roleLabels = {
+    PRESIDENT: "President",
+    VICE_PRESIDENT: "Vice President",
+    SECRETARY: "Secretary",
+    TREASURER: "Treasurer",
+    SERGEANT_AT_ARMS: "Sergeant At Arms",
+    IMMEDIATE_PAST_PRESIDENT: "Immediate Past President",
+    ADVISOR: "Advisor",
+    COMMUNITY_SERVICE_DIRECTOR: "Community Service Director",
+    FINANCE_DIRECTOR: "Finance Director",
+    INTERNATIONAL_UNDERSTANDING_DIRECTOR: "International Understanding Director",
+    PROFESSIONAL_DEVELOPMENT_DIRECTOR: "Professional Development Director",
+    CLUB_SERVICE_DIRECTOR: "Club Service Director",
+    PUBLIC_IMAGE_DIRECTOR: "Public Image Director",
+    MEMBER: "Member",
+    GUEST: "Guest"
+  };
 
   async function handleDelete(id: number) {
     setLoading(true);
@@ -52,10 +73,10 @@ export default function MembersList({ members }: { members: Member[] }) {
         Manage Members
       </h1>
       <div className="max-w-3xl mx-auto mb-4">
-        <Input 
-        value={search}
-        onChange={handleChange}
-        placeholder="Search Members"/>
+        <Input
+          value={search}
+          onChange={handleChange}
+          placeholder="Search Members" />
       </div>
       <div className="flex justify-end m-4">
         <Link
@@ -73,7 +94,7 @@ export default function MembersList({ members }: { members: Member[] }) {
             No members yet
           </p>
         )}
-        {data.filter(m=> m.name.toLowerCase().includes(search.toLowerCase())).map((member) => (
+        {data.filter(m => m.name.toLowerCase().includes(search.toLowerCase())).map((member) => (
           <div
             key={member.id}
             className="bg-white rounded-xl shadow-sm px-5 py-4 flex items-center justify-between"
@@ -84,7 +105,7 @@ export default function MembersList({ members }: { members: Member[] }) {
                 {member.name}
               </p>
               <p className="text-sm text-gray-500">
-                {member.role}
+                {roleLabels[member.role as Role]}
               </p>
             </div>
 
@@ -109,7 +130,7 @@ export default function MembersList({ members }: { members: Member[] }) {
           </div>
         ))}
       </div>
-      <Dialog open={open} onOpenChange={(value) => {if(!loading) setOpen(value)}}>
+      <Dialog open={open} onOpenChange={(value) => { if (!loading) setOpen(value) }}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Delete Member?</DialogTitle>

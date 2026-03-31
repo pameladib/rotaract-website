@@ -1,10 +1,12 @@
 "use client";
 import type { Project } from "../../../generated/prisma/client";
+import { ProjectCategory } from "../../../generated/prisma/client";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { generateRotaryYears } from "@/lib/utils";
 import {
   Dialog,
   DialogContent,
@@ -12,6 +14,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectValue,
+  SelectItem,
+} from "@/components/ui/select";
 
 export default function ProjectsList({ projects }: { projects: Project[] }) {
   const [data, setData] = useState(projects);
@@ -28,6 +37,11 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
     FINANCE: "Finance",
     PUBLIC_IMAGE: "Public Image"
   }
+
+  const rotaryYears = generateRotaryYears(2024, 6);
+  const [selectedYear, setSelectedYear] = useState("ALL");
+  const [selectedCommittee, setSelectedCommittee] = useState("ALL");
+  
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setSearch(e.target.value);
@@ -60,6 +74,62 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
       <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
         Manage Projects
       </h1>
+      <div className="w-52">
+        <label className="text-sm text-gray-500 mb-1 block">
+          Filter by year
+        </label>
+
+        <Select
+          value={selectedYear}
+          onValueChange={(value) => setSelectedYear(value)}
+        >
+          <SelectTrigger className="w-full rounded-lg border border-zinc-200 bg-white shadow-sm hover:border-pink-400 focus:ring-2 focus:ring-pink-200 transition">
+            <SelectValue placeholder="All Years" />
+          </SelectTrigger>
+
+          <SelectContent className="rounded-lg border border-zinc-200 shadow-md">
+            <SelectItem value="ALL">All Years</SelectItem>
+
+            {rotaryYears.map((year) => (
+              <SelectItem
+                key={year}
+                value={year}
+                className="cursor-pointer hover:bg-pink-50"
+              >
+                {year}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+      <div className="w-52">
+        <label className="text-sm text-gray-500 mb-1 block">
+          Filter by committee
+        </label>
+
+        <Select
+          value={selectedCommittee}
+          onValueChange={(value) => setSelectedCommittee(value)}
+        >
+          <SelectTrigger className="w-full rounded-lg border border-zinc-200 bg-white shadow-sm hover:border-pink-400 focus:ring-2 focus:ring-pink-200 transition">
+            <SelectValue placeholder="All Years" />
+          </SelectTrigger>
+
+          <SelectContent className="rounded-lg border border-zinc-200 shadow-md">
+            <SelectItem value="ALL">All Committees</SelectItem>
+
+            {Object.keys(categoryLabels).map((category) => (
+              <SelectItem
+                key={category}
+                value={category}
+                className="cursor-pointer hover:bg-pink-50"
+              >
+                {categoryLabels[category as ProjectCategory]}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
       <div className="max-w-3xl mx-auto mb-4">
         <Input
           value={search}
@@ -81,7 +151,18 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
       )}
 
       <div className="space-y-4 max-w-3xl mx-auto">
-        {data.filter(p => p.title.toLowerCase().includes(search.toLowerCase())).map((project) => (
+        {data.filter((p) => {
+          const matchesSearch =
+            p.title.toLowerCase().includes(search.toLowerCase());
+
+          const matchesYear =
+            selectedYear === "ALL" ||
+            p.rotaryYear === selectedYear;
+
+          const matchesCommittee = selectedCommittee === "ALL" || p.category === (selectedCommittee as ProjectCategory);  
+
+          return matchesSearch && matchesYear && matchesCommittee;
+        }).map((project) => (
           <div
             key={project.id}
             className="bg-white rounded-xl shadow-sm px-5 py-4 flex items-center justify-between"

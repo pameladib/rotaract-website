@@ -11,7 +11,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Division } from "../../../generated/prisma/client";
+import { Division, Role } from "../../../generated/prisma/client";
 import { uploadImage } from "@/lib/upload";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
@@ -20,7 +20,7 @@ type Props = {
     initialData?: {
         id: number;
         name: string;
-        role: string;
+        role: Role;
         bio: string | null;
         occupation: string;
         division: Division;
@@ -47,6 +47,24 @@ export default function MemberForm({ initialData }: Props) {
         DIRECTORS: "Directors",
         MEMBERS: "Members",
         GUESTS: "Guests",
+    };
+
+    const roleLabels = {
+        PRESIDENT: "President",
+        VICE_PRESIDENT: "Vice President",
+        SECRETARY: "Secretary",
+        TREASURER: "Treasurer",
+        SERGEANT_AT_ARMS: "Sergeant At Arms",
+        IMMEDIATE_PAST_PRESIDENT: "Immediate Past President",
+        ADVISOR: "Advisor",
+        COMMUNITY_SERVICE_DIRECTOR: "Community Service Director",
+        FINANCE_DIRECTOR: "Finance Director",
+        INTERNATIONAL_UNDERSTANDING_DIRECTOR: "International Understanding Director",
+        PROFESSIONAL_DEVELOPMENT_DIRECTOR: "Professional Development Director",
+        CLUB_SERVICE_DIRECTOR: "Club Service Director",
+        PUBLIC_IMAGE_DIRECTOR: "Public Image Director",
+        MEMBER: "Member",
+        GUEST: "Guest"
     };
 
     const isEdit = !!initialData; // !! converts initialData into a boolean. If initialData is defined -> true, else false
@@ -160,12 +178,24 @@ export default function MemberForm({ initialData }: Props) {
 
                     <div className="space-y-1">
                         <label className="text-sm text-gray-600">Role</label>
-                        <Input
-                            name="role"
+                        <Select
                             value={form.role}
-                            onChange={handleChange}
-                            placeholder="Enter role (Member/Guest if no specific position)" required
-                        />
+                            onValueChange={(value) =>
+                                setForm({ ...form, role: value })
+                            }
+                        >
+                            <SelectTrigger className="w-full">
+                                <SelectValue placeholder="Select Role" />
+                            </SelectTrigger>
+
+                            <SelectContent>
+                                {Object.keys(roleLabels).map((role) => (
+                                    <SelectItem key={role} value={role}>
+                                        {roleLabels[role as Role]}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
                     </div>
 
                     <div className="space-y-1">
@@ -187,28 +217,6 @@ export default function MemberForm({ initialData }: Props) {
                             rows={3}
                             placeholder="Short bio..."
                         />
-                    </div>
-
-                    <div className="space-y-1">
-                        <label className="text-sm text-gray-600">Division</label>
-                        <Select
-                            value={form.division}
-                            onValueChange={(value) =>
-                                setForm({ ...form, division: value })
-                            }
-                        >
-                            <SelectTrigger className="w-full">
-                                <SelectValue placeholder="Select division" />
-                            </SelectTrigger>
-
-                            <SelectContent>
-                                {Object.keys(divisionLabels).map((division) => (
-                                    <SelectItem key={division} value={division}>
-                                        {divisionLabels[division as Division]}
-                                    </SelectItem>
-                                ))}
-                            </SelectContent>
-                        </Select>
                     </div>
                     <div className="flex flex-col gap-3">
                         <label className="text-sm font-medium text-gray-700">

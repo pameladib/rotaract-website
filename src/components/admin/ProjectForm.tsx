@@ -15,6 +15,7 @@ import { ProjectCategory } from "../../../generated/prisma/client";
 import { uploadImage } from "@/lib/upload";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { generateRotaryYears, ROTARY_START_YEAR, ROTARY_YEAR_COUNT } from "@/lib/utils";
 
 type Props = {
     initialData?: {
@@ -60,14 +61,6 @@ export default function ProjectForm({ initialData }: Props) {
     const buttonLabel = isEdit ? "Update Project" : "Add Project";
     const url = isEdit ? `/api/projects/${initialData.id}` : "/api/projects";
 
-
-    function generateRotaryYears(startYear: number, count: number) {
-        return Array.from({ length: count }, (_, i) => {
-            const year = startYear + i;
-            return `${year}-${year + 1}`;
-        });
-    }
-
     function removeNewImage(index: number) {
         setGallery(prev => prev.filter((_, i) => i !== index));
     }
@@ -79,7 +72,7 @@ export default function ProjectForm({ initialData }: Props) {
         })); // (_, i) is same as (file, index) but since we only need the index for this logic, we write _ instead of file
     }
 
-    const rotaryYears = generateRotaryYears(2024, 6);
+    const rotaryYears = generateRotaryYears(ROTARY_START_YEAR, ROTARY_YEAR_COUNT);
 
     function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
         const selected = e.target.files?.[0]; // get the selected file
