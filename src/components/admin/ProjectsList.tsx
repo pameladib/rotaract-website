@@ -41,7 +41,7 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
   const rotaryYears = generateRotaryYears(2024, 6);
   const [selectedYear, setSelectedYear] = useState("ALL");
   const [selectedCommittee, setSelectedCommittee] = useState("ALL");
-  
+
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setSearch(e.target.value);
@@ -74,75 +74,57 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
       <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
         Manage Projects
       </h1>
-      <div className="w-52">
-        <label className="text-sm text-gray-500 mb-1 block">
-          Filter by year
-        </label>
+      <div className="max-w-3xl mx-auto mb-4 flex items-center justify-between gap-4">
 
-        <Select
-          value={selectedYear}
-          onValueChange={(value) => setSelectedYear(value)}
-        >
-          <SelectTrigger className="w-full rounded-lg border border-zinc-200 bg-white shadow-sm hover:border-pink-400 focus:ring-2 focus:ring-pink-200 transition">
-            <SelectValue placeholder="All Years" />
-          </SelectTrigger>
+        <div className="flex gap-3">
+          <div className="w-36">
+            <Select value={selectedYear} onValueChange={setSelectedYear}>
+              <SelectTrigger>
+                <SelectValue placeholder="Year" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="ALL">All Years</SelectItem>
+                {rotaryYears.map((year) => (
+                  <SelectItem key={year} value={year}>
+                    {year}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
 
-          <SelectContent className="rounded-lg border border-zinc-200 shadow-md">
-            <SelectItem value="ALL">All Years</SelectItem>
+          <div className="w-44">
+            <Select value={selectedCommittee} onValueChange={setSelectedCommittee}>
+              <SelectTrigger>
+                <SelectValue placeholder="Committee" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="ALL">All Committees</SelectItem>
+                {Object.keys(categoryLabels).map((category) => (
+                  <SelectItem key={category} value={category}>
+                    {categoryLabels[category as ProjectCategory]}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
 
-            {rotaryYears.map((year) => (
-              <SelectItem
-                key={year}
-                value={year}
-                className="cursor-pointer hover:bg-pink-50"
-              >
-                {year}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-      <div className="w-52">
-        <label className="text-sm text-gray-500 mb-1 block">
-          Filter by committee
-        </label>
-
-        <Select
-          value={selectedCommittee}
-          onValueChange={(value) => setSelectedCommittee(value)}
-        >
-          <SelectTrigger className="w-full rounded-lg border border-zinc-200 bg-white shadow-sm hover:border-pink-400 focus:ring-2 focus:ring-pink-200 transition">
-            <SelectValue placeholder="All Years" />
-          </SelectTrigger>
-
-          <SelectContent className="rounded-lg border border-zinc-200 shadow-md">
-            <SelectItem value="ALL">All Committees</SelectItem>
-
-            {Object.keys(categoryLabels).map((category) => (
-              <SelectItem
-                key={category}
-                value={category}
-                className="cursor-pointer hover:bg-pink-50"
-              >
-                {categoryLabels[category as ProjectCategory]}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-      <div className="max-w-3xl mx-auto mb-4">
-        <Input
-          value={search}
-          onChange={handleChange}
-          placeholder="Search Projects" />
-      </div>
-      <div className="flex justify-end m-4">
         <Link
           href="/admin/projects/new"
           className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-pink-600 text-white text-sm font-medium shadow-sm hover:bg-pink-700 active:scale-95 transition"
         >
           + Add Project
         </Link>
+      </div>
+
+      <div className="max-w-3xl mx-auto mb-6">
+        <Input
+          value={search}
+          onChange={handleChange}
+          placeholder="Search projects..."
+          className="w-full"
+        />
       </div>
       {data.length === 0 && (
         <p className="text-center text-gray-500">
@@ -159,7 +141,7 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
             selectedYear === "ALL" ||
             p.rotaryYear === selectedYear;
 
-          const matchesCommittee = selectedCommittee === "ALL" || p.category === (selectedCommittee as ProjectCategory);  
+          const matchesCommittee = selectedCommittee === "ALL" || p.category === (selectedCommittee as ProjectCategory);
 
           return matchesSearch && matchesYear && matchesCommittee;
         }).map((project) => (

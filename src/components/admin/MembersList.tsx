@@ -72,19 +72,22 @@ export default function MembersList({ members }: { members: Member[] }) {
       <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
         Manage Members
       </h1>
-      <div className="max-w-3xl mx-auto mb-4">
-        <Input
-          value={search}
-          onChange={handleChange}
-          placeholder="Search Members" />
-      </div>
-      <div className="flex justify-end m-4">
+      <div className="max-w-3xl mx-auto flex justify-end mb-3">
         <Link
           href="/admin/members/new"
           className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-pink-600 text-white text-sm font-medium shadow-sm hover:bg-pink-700 active:scale-95 transition"
         >
           + Add Member
         </Link>
+      </div>
+
+      <div className="max-w-3xl mx-auto mb-6">
+        <Input
+          value={search}
+          onChange={handleChange}
+          placeholder="Search members..."
+          className="w-full"
+        />
       </div>
 
       <div className="space-y-4 max-w-3xl mx-auto">

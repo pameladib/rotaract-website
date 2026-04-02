@@ -1,36 +1,58 @@
+"use client";
+
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function AdminPage() {
+  const router = useRouter();
+
   return (
-    <div className=" bg-zinc-50 flex pt-20 pb-20 justify-center">
-      <div className="bg-white shadow-lg rounded-2xl p-10 w-full max-w-md text-center space-y-6">
+    <div className=" bg-zinc-50">
 
-        <h1 className="text-3xl font-bold text-gray-900">
-          Admin Panel
-        </h1>
+      <div className="w-full flex justify-end px-6 py-4">
+        <Button
+          variant="ghost"
+          className="text-gray-600 hover:text-red-600 hover:bg-red-50 transition"
+          onClick={async () => {
+            await fetch("/api/logout", { method: "POST" });
+            router.push("/admin/login");
+          }}
+        >
+          Logout
+        </Button>
+      </div>
 
-        <p className="text-gray-500">
-          Manage your website content
-        </p>
+      <div className="flex justify-center items-center px-4 pb-20">
+        <div className="bg-white shadow-lg rounded-2xl p-10 w-full max-w-md text-center space-y-6">
 
-        <div className="flex flex-col gap-4 mt-6">
+          <h1 className="text-3xl font-bold text-gray-900">
+            Admin Panel
+          </h1>
 
-          <Link
-            href="/admin/members"
-            className="w-full rounded-lg bg-gray-500 text-white py-3 font-medium hover:bg-pink-700 transition"
-          >
-            Manage Members
-          </Link>
+          <p className="text-gray-500">
+            Manage your website content
+          </p>
 
-          <Link
-            href="/admin/projects"
-            className="w-full rounded-lg bg-gray-500 text-white py-3 font-medium hover:bg-gray-800 transition"
-          >
-            Manage Projects
-          </Link>
+          <div className="flex flex-col gap-4 mt-6">
+
+            <Link
+              href="/admin/members"
+              className="w-full rounded-lg bg-gray-500 text-white py-3 font-medium hover:bg-pink-700 transition"
+            >
+              Manage Members
+            </Link>
+
+            <Link
+              href="/admin/projects"
+              className="w-full rounded-lg bg-gray-500 text-white py-3 font-medium hover:bg-gray-800 transition"
+            >
+              Manage Projects
+            </Link>
+
+          </div>
 
         </div>
-
       </div>
     </div>
   );
