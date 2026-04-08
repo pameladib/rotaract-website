@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
 
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -21,6 +20,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rotaract Club of Zgharta Zawie",
   description: "Official website of the Rotaract Club of Zgharta Zawie. Discover our projects, members, and community initiatives.",
+  verification: {
+    google: "56kn2caB9hViSqVXl0WM3mOhmiaW4OxwZzG8tnxZv8M",
+  }
 };
 
 export default function RootLayout({

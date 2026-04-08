@@ -42,7 +42,7 @@ This project is also part of my personal journey in learning:
 
 ---
 
-## Current Features (V1)
+## Current Features (V1-V2)
 
 - Navigation bar
 - Home page
@@ -50,21 +50,21 @@ This project is also part of my personal journey in learning:
 - Members page (organized by division)
 - Projects page (categorized)
 - Dynamic project pages using slugs
-- static (mock) data
-
----
-
-## Planned Features (V2) – In Progress 
-
 - Backend & database integration (Prisma + PostgreSQL)
 - Admin panel:
   - Add, edit, and delete projects
   - Add, edit, and manage members
   - Basic dashboard for content management
+- search and filtering for better data navigation
+- image uploads and galleries using Supabase storage
+- custom ordering logic to maintain structured roles (e.g. board members)
+- a simple authentication system with protected admin routes
 
 ---
 
-## Planned Features (V3) – Planned 
+
+
+## Planned Features (V3) 
 
 ### Explore the World
 - Interactive world map
