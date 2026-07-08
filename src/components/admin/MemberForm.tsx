@@ -42,8 +42,8 @@ export default function MemberForm({ initialData }: Props) {
         imageSrc: initialData?.imageSrc || "",
     });
 
-    const divisionLabels = {
-        BOARD: "Board",
+    const divisionLabels = { // mapping object, we define it only because we care about human-readable labels
+        BOARD: "Board", // if we didn't, we could use the Division enum that we imported from schema directly
         DIRECTORS: "Directors",
         MEMBERS: "Members",
         GUESTS: "Guests",

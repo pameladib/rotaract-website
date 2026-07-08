@@ -24,7 +24,7 @@ export default function ProjectsClient({ projects }: { projects: Project[] }) {
     PUBLIC_IMAGE: "Public Image"
   };
 
-  const rotaryYears = generateRotaryYears(2024, 2);
+  const rotaryYears = generateRotaryYears(2024, 3);
   const [selectedYear, setSelectedYear] = useState("ALL");
 
   return (
