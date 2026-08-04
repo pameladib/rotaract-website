@@ -38,7 +38,7 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
     PUBLIC_IMAGE: "Public Image"
   }
 
-  const rotaryYears = generateRotaryYears(2024, 6);
+  const rotaryYears = [...generateRotaryYears(2024)].reverse();
   const [selectedYear, setSelectedYear] = useState("ALL");
   const [selectedCommittee, setSelectedCommittee] = useState("ALL");
 
