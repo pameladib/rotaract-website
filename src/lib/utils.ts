@@ -24,4 +24,3 @@ export function generateRotaryYears(startYear: number): string[] {
 }
 
 export const ROTARY_START_YEAR = 2024;
-export const ROTARY_YEAR_COUNT = 6;

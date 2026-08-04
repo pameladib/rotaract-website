@@ -15,7 +15,7 @@ import { ProjectCategory } from "../../../generated/prisma/client";
 import { uploadImage } from "@/lib/upload";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { generateRotaryYears, ROTARY_START_YEAR, ROTARY_YEAR_COUNT } from "@/lib/utils";
+import { generateRotaryYears, ROTARY_START_YEAR } from "@/lib/utils";
 
 type Props = {
     initialData?: {
@@ -72,7 +72,7 @@ export default function ProjectForm({ initialData }: Props) {
         })); // (_, i) is same as (file, index) but since we only need the index for this logic, we write _ instead of file
     }
 
-    const rotaryYears = generateRotaryYears(ROTARY_START_YEAR, ROTARY_YEAR_COUNT);
+    const rotaryYears = [...generateRotaryYears(ROTARY_START_YEAR)].reverse();
 
     function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
         const selected = e.target.files?.[0]; // get the selected file
