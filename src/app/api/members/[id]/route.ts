@@ -1,6 +1,7 @@
 import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import { Division, Role } from "../../../../../generated/prisma/client";
+import { requireAdminApi } from "@/lib/auth";
 
 function getDivisionFromRole(role: Role): Division {
   if (role === "PRESIDENT" || role === "VICE_PRESIDENT" || role === "SECRETARY" || role === "TREASURER" || role === "SERGEANT_AT_ARMS" || role === "IMMEDIATE_PAST_PRESIDENT" || role === "ADVISOR")
@@ -17,6 +18,9 @@ export async function DELETE(
   req: Request,
   context: { params: Promise<{ id: string }> }
 ) {
+  const unauthorized = await requireAdminApi();
+  if (unauthorized) return unauthorized;
+
   const params = await context.params;
   const id = Number(params.id);
 
@@ -38,6 +42,9 @@ export async function PATCH(
   req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const unauthorized = await requireAdminApi();
+  if (unauthorized) return unauthorized;
+
   const { id } = await params; // extract the id property of params directly
 
   try {

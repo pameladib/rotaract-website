@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import {
+  ADMIN_SESSION_COOKIE,
+  adminSessionCookieOptions,
+  createAdminSession,
+} from "@/lib/auth";
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -8,14 +13,12 @@ export async function POST(req: Request) {
     email === process.env.ADMIN_EMAIL &&
     password === process.env.ADMIN_PASSWORD
   ) {
-    const response = NextResponse.json({ success: true }); // we store the response first because we need to modify it (add the cookie) before returning it 
+    const token = await createAdminSession();
+    const response = NextResponse.json({ success: true });
 
-    response.cookies.set("isAdmin", "true", { // cookies are delivered through the HTTP response headers, so we must attach them to the response before sending it
-      httpOnly: true, // JS cannot access this cookie -> protects against XSS attacks
-      path: "/", // cookie is available on all routes
-    });
+    response.cookies.set(ADMIN_SESSION_COOKIE, token, adminSessionCookieOptions());
 
-    return response; // the server will send the response, browser will receive it and store the cookie then send it again in every HTTP request
+    return response;
   }
 
   return NextResponse.json(

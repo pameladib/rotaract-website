@@ -1,11 +1,15 @@
 import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import { ProjectCategory } from "../../../../../generated/prisma/client";
+import { requireAdminApi } from "@/lib/auth";
 
 export async function DELETE(
   req: Request,
   context: { params: Promise<{ id: string }> }
 ) {
+  const unauthorized = await requireAdminApi();
+  if (unauthorized) return unauthorized;
+
   const params = await context.params;
   const id = Number(params.id);
 
@@ -27,6 +31,9 @@ export async function PATCH(
   req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const unauthorized = await requireAdminApi();
+  if (unauthorized) return unauthorized;
+
   const { id } = await params; // extract the id property of params directly
 
   try {

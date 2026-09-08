@@ -1,6 +1,7 @@
 import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import { ProjectCategory } from "../../../../generated/prisma/client";
+import { requireAdminApi } from "@/lib/auth";
 
 async function generateUniqueSlug(title: string) {
     const baseSlug = title
@@ -24,6 +25,9 @@ async function generateUniqueSlug(title: string) {
 }
 
 export async function POST(req: Request) {
+    const unauthorized = await requireAdminApi();
+    if (unauthorized) return unauthorized;
+
     try {
         const body = await req.json();
         const { title, description, category, content, imageSrc, rotaryYear, gallery } = body;

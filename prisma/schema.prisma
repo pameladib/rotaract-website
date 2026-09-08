@@ -66,3 +66,9 @@ enum Role {
   MEMBER
   GUEST
 }
+
+model AdminSession {
+    id        Int      @id @default(autoincrement())
+    tokenHash String   @unique
+    expiresAt DateTime
+}

@@ -1,6 +1,7 @@
 import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import { Division, Role } from "../../../../generated/prisma/client";
+import { requireAdminApi } from "@/lib/auth";
 
 function getDivisionFromRole(role: Role): Division {
     if(role === "PRESIDENT" || role === "VICE_PRESIDENT" || role === "SECRETARY" || role === "TREASURER" || role === "SERGEANT_AT_ARMS" || role === "IMMEDIATE_PAST_PRESIDENT" || role === "ADVISOR")
@@ -14,6 +15,9 @@ function getDivisionFromRole(role: Role): Division {
 }
 
 export async function POST(req: Request) {
+    const unauthorized = await requireAdminApi();
+    if (unauthorized) return unauthorized;
+
     try {
         const body = await req.json();
         const { name, role, bio, occupation, imageSrc } = body;
