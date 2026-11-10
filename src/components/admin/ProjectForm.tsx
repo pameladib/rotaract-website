@@ -60,6 +60,7 @@ export default function ProjectForm({ initialData }: Props) {
     const isEdit = !!initialData; // !! converts initialData into a boolean. If initialData is defined -> true, else false
     const buttonLabel = isEdit ? "Update Project" : "Add Project";
     const url = isEdit ? `/api/projects/${initialData.id}` : "/api/projects";
+    const missingImage = !isEdit && !file;
 
     function removeNewImage(index: number) {
         setGallery(prev => prev.filter((_, i) => i !== index));
@@ -120,6 +121,11 @@ export default function ProjectForm({ initialData }: Props) {
 
     async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
         e.preventDefault();
+
+        if (!isEdit && !file) {
+            toast.error("Please choose an image file before saving.");
+            return;
+        }
 
         setLoading(true);
 
@@ -283,6 +289,7 @@ export default function ProjectForm({ initialData }: Props) {
                             <input
                                 type="file"
                                 accept="image/*"
+                                required={!isEdit}
                                 onChange={handleFile}
                                 className="w-full text-sm text-gray-600 
                 file:mr-4 file:py-2 file:px-4
@@ -295,6 +302,11 @@ export default function ProjectForm({ initialData }: Props) {
                                 <img src={preview || form.imageSrc} alt="Preview" className="w-32 h-32 object-cover rounded-lg mt-2 border" />
                             )}
                         </div>
+                        {missingImage && (
+                            <p className="text-sm text-red-600">
+                                Please choose an image file before saving.
+                            </p>
+                        )}
                     </div>
                     <div className="flex flex-col gap-3">
                         <label className="text-sm font-medium text-gray-700">
@@ -359,7 +371,7 @@ export default function ProjectForm({ initialData }: Props) {
 
 
 
-                    <Button disabled={loading} className="w-full mt-4 transition transform hover:scale-105">
+                    <Button disabled={loading || missingImage} className="w-full mt-4 transition transform hover:scale-105">
                         {loading ? "Saving..." : buttonLabel}
                     </Button>
                 </form>
